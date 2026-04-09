@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSU CPT - Teachers' Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            border-bottom: 5px solid #0078d4;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #0078d4;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            color: #f39c12;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .header-info {
+            color: #888;
+            font-size: 0.95em;
+            margin-top: 20px;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background-color: #f0f8ff;
+            border-left: 6px solid #0078d4;
+            padding: 30px;
+            margin-bottom: 50px;
+            border-radius: 8px;
+        }
+
+        .toc h2 {
+            color: #0078d4;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #0078d4;
+            padding-bottom: 10px;
+        }
+
+        .toc-content {
+            columns: 2;
+            gap: 30px;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .toc li:before {
+            content: "▸";
+            color: #0078d4;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .toc a {
+            color: #0078d4;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .toc a:hover {
+            color: #f39c12;
+            text-decoration: underline;
+        }
+
+        .toc-section {
+            margin-bottom: 25px;
+        }
+
+        .toc-section h3 {
+            color: #0078d4;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        /* Section Headers */
+        .section {
+            margin-bottom: 60px;
+            page-break-inside: avoid;
+        }
+
+        .section h2 {
+            color: white;
+            background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+            padding: 20px 25px;
+            border-radius: 8px;
+            font-size: 2em;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,120,212,0.2);
+        }
+
+        .subsection {
+            margin-bottom: 30px;
+        }
+
+        .subsection h3 {
+            color: #0078d4;
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-left: 5px solid #f39c12;
+            padding-left: 15px;
+        }
+
+        .subsection h4 {
+            color: #333;
+            font-size: 1.15em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .subsection p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        /* Feature Box */
+        .feature-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #fffbf0 100%);
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(243,156,18,0.1);
+        }
+
+        .feature-box strong {
+            color: #f39c12;
+        }
+
+        .feature-box ul {
+            margin-top: 12px;
+            margin-left: 25px;
+        }
+
+        .feature-box li {
+            margin-bottom: 8px;
+        }
+
+        /* Strategy Box */
+        .strategy-box {
+            background-color: #f0f8ff;
+            border: 2px solid #0078d4;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,120,212,0.1);
+        }
+
+        .strategy-box h4 {
+            color: #0078d4;
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+
+        .objective {
+            font-style: italic;
+            color: #555;
+            background-color: #e8f5e9;
+            padding: 12px 15px;
+            border-left: 4px solid #4caf50;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .strategy-box ol {
+            margin-left: 25px;
+            margin-top: 15px;
+        }
+
+        .strategy-box li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        /* Do's and Don'ts */
+        .do-dont-container {
+            display: flex;
+            gap: 25px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .do-box, .dont-box {
+            flex: 1;
+            min-width: 320px;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .do-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            border-left: 6px solid #4caf50;
+            box-shadow: 0 2px 6px rgba(76,175,80,0.1);
+        }
+
+        .do-box h4 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.15em;
+        }
+
+        .dont-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-left: 6px solid #f44336;
+            box-shadow: 0 2px 6px rgba(244,67,54,0.1);
+        }
+
+        .dont-box h4 {
+            color: #c62828;
+            margin-bottom: 15px;
+            font-size: 1.15em;
+        }
+
+        .do-box ul, .dont-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .do-box li, .dont-box li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .do-box li:before {
+            content: "✓";
+            color: #2e7d32;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+
+        .dont-box li:before {
+            content: "✗";
+            color: #c62828;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.98em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        th {
+            background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 3px solid #003d7a;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f0f8ff;
+            transition: 0.2s;
+        }
+
+        /* Outcome List */
+        .outcomes {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            border-left: 6px solid #4caf50;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(76,175,80,0.1);
+        }
+
+        .outcomes h4 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .outcomes ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .outcomes li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            color: #333;
+        }
+
+        .outcomes li:before {
+            content: "✓";
+            color: #4caf50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.3em;
+        }
+
+        /* Pro Tip Box */
+        .pro-tip {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            border-left: 6px solid #1976d2;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(25,118,210,0.1);
+        }
+
+        .pro-tip h4 {
+            color: #1565c0;
+            margin-bottom: 12px;
+            font-size: 1.15em;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            border-top: 3px solid #0078d4;
+            padding-top: 30px;
+            margin-top: 60px;
+            color: #666;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer strong {
+            color: #0078d4;
+        }
+
+        /* Page Break */
+        .page-break {
+            page-break-after: always;
+            margin: 40px 0;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+
+            .container {
+                max-width: 100%;
+                box-shadow: none;
+                padding: 30px;
+            }
+
+            .section, .strategy-box, .feature-box, .outcomes, .pro-tip {
+                page-break-inside: avoid;
+            }
+
+            .toc a {
+                text-decoration: underline;
+            }
+
+            a {
+                color: #0078d4;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .toc-content {
+                columns: 1;
+            }
+
+            .do-dont-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .subsection h3 {
+                font-size: 1.2em;
+            }
+        }
+
+        /* Link styling */
+        a {
+            color: #0078d4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>📚 KSU CPT</h1>
+            <p>Comprehensive Teachers' Guide for Classroom Implementation</p>
+            <div class="subtitle">Q Skills Intro - LS - Unit 1 - Audio 1: "Q3eSE_LS0_U01_01_QClassroom"</div>
+            <div class="header-info">
+                <p><strong>Created for:</strong> EFL/ESL teachers at King Saud University</p>
+                <p><strong>Tool Focus:</strong> Listening Comprehension, Vocabulary Building & Grammar Integration</p>
+                <p><strong>© 2026</strong> All Rights Reserved</p>
+            </div>
+        </div>
+
+        <!-- TABLE OF CONTENTS -->
+        <div class="toc">
+            <h2>📖 Table of Contents</h2>
+            <div class="toc-content">
+                <div>
+                    <div class="toc-section">
+                        <h3>Part I: Understanding the Tool</h3>
+                        <ul>
+                            <li><a href="#section1">Section 1: Core Features Overview</a></li>
+                            <li style="margin-left: 15px; font-size: 0.95em;">
+                                <a href="#feature1">Feature 1: Bilingual Lesson Content</a>
+                            </li>
+                            <li style="margin-left: 15px; font-size: 0.95em;">
+                                <a href="#feature2">Feature 2: Audio Navigation & Search</a>
+                            </li>
+                            <li style="margin-left: 15px; font-size: 0.95em;">
+                                <a href="#feature3">Feature 3: Text-to-Speech (TTS) Controls</a>
+                            </li>
+                            <li style="margin-left: 15px; font-size: 0.95em;">
+                                <a href="#feature4">Feature 4: Quiz/Assessment Mode</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="toc-section">
+                        <h3>Part II: Teaching Strategies</h3>
+                        <ul>
+                            <li><a href="#section2">Section 2: Classroom Teaching Strategies (7 Strategies)</a></li>
+                            <li><a href="#section3">Section 3: Quick Review & Test Prep (7 Review Strategies)</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="toc-section">
+                        <h3>Part III: Implementation</h3>
+                        <ul>
+                            <li><a href="#section4">Section 4: Sample Lesson Sequence (45 minutes)</a></li>
+                            <li><a href="#section5">Section 5: Key Teacher Tips</a></li>
+                            <li><a href="#section6">Section 6: Assessment Outcomes</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECTION 1: CORE FEATURES -->
+        <!-- ============================================ -->
+        <div class="section" id="section1">
+            <h2>Section 1: Core Features Overview</h2>
+
+            <p style="margin-bottom: 20px; font-size: 1.05em; color: #555;">
+                The Interactive Teaching Tool is built on four powerful features designed to maximize student engagement and comprehension. Below is a detailed breakdown of each feature and how it benefits your classroom.
+            </p>
+
+            <!-- Feature 1 -->
+            <div class="subsection" id="feature1">
+                <h3>Feature 1: Bilingual Lesson Content</h3>
+                
+                <div class="feature-box">
+                    <strong>🌍 What it is:</strong>
+                    <p style="margin-top: 10px;">Every audio clip is accompanied by:</p>
+                    <ul>
+                        <li><strong>English script</strong> - Full dialogue/sentence transcription</li>
+                        <li><strong>Arabic translation</strong> - For ESL/EFL contexts with Arabic-speaking learners</li>
+                        <li><strong>Speaker identification</strong> - Clearly shows who is speaking (Teacher, Yuna, Felix, Marcus, Sophy)</li>
+                        <li><strong>Keywords, definitions, and illustrations</strong> - Visual and textual support for vocabulary</li>
+                         <li><strong>Word order exercise</strong> - Builds sentence structure awareness</li>
+                    </ul>
+                </div>
+
+                <h4>Why it matters:</h4>
+                <ul style="margin-left: 25px; margin-bottom: 15px;">
+                    <li>✓ Removes language barriers while maintaining English focus</li>
+                    <li>✓ Students can self-check comprehension independently</li>
+                    <li>✓ Reduces anxiety for lower-level learners with Arabic scaffold</li>
+                    <li>✓ Supports visual learners with illustrations and definitions</li>
+                    <li>✓ Enables differentiated learning (advanced students skip Arabic, struggling students use it)</li>
+                </ul>
+
+                <p style="background-color: #fff8e1; padding: 15px; border-radius: 5px; border-left: 4px solid #f39c12;">
+                    <strong>💡 Classroom Tip:</strong> Use the English/Arabic toggle strategically. During the first listening, show only the audio. Then reveal English. Use Arabic only for verification or for students who are significantly behind.
+                </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="subsection" id="feature2">
+                <h3>Feature 2: Audio Navigation & Search</h3>
+                
+                <div class="feature-box">
+                    <strong>🎯 What it is:</strong>
+                    <p style="margin-top: 10px;">Teachers and students can:</p>
+                    <ul>
+                        <li><strong>Move sequentially</strong> - Previous/Next buttons for linear progression</li>
+                        <li><strong>Jump directly to any clip</strong> - Numbered search box: "Enter clip #"</li>
+                        <li><strong>Auto-play next clip automatically</strong> - For continuous listening practice</li>
+                        <li><strong>Use arrow keys for quick navigation</strong> - Accessibility feature for keyboard users</li>
+                    </ul>
+                </div>
+
+                <h4>Why it matters:</h4>
+                <ul style="margin-left: 25px; margin-bottom: 15px;">
+                    <li>✓ Non-linear teaching allows flexible pacing and targeted focus</li>
+                    <li>✓ Teachers can jump to specific vocabulary/grammar points without playing everything</li>
+                    <li>✓ Students can review problem areas independently</li>
+                    <li>✓ Arrow keys support inclusive teaching (accommodates various learning needs)</li>
+                    <li>✓ Saves class time - no need to listen to clips sequentially</li>
+                </ul>
+
+                <p style="background-color: #fff8e1; padding: 15px; border-radius: 5px; border-left: 4px solid #f39c12;">
+                    <strong>💡 Classroom Tip:</strong> Create a "key clips list" (e.g., clips #12, 16, 31 for grammar structures) that you distribute to students so they can find critical content quickly during independent practice.
+                </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="subsection" id="feature3">
+                <h3>Feature 3: Text-to-Speech (TTS) Controls</h3>
+                
+                <div class="feature-box">
+                    <strong>🔊 What it is:</strong>
+                    <p style="margin-top: 10px;">Four TTS buttons provide flexible audio support:</p>
+                    <ul>
+                        <li><strong>TTS-English:</strong> Read English script aloud with synthetic pronunciation</li>
+                        <li><strong>TTS-Arabic:</strong> Read Arabic translation aloud</li>
+                        <li><strong>TTS-Selected:</strong> Speak any highlighted text (partial phrases or sentences)</li>
+                        <li><strong>Stop TTS:</strong> Cancel playback immediately</li>
+                    </ul>
+                </div>
+
+                <h4>Why it matters:</h4>
+                <ul style="margin-left: 25px; margin-bottom: 15px;">
+                    <li>✓ Multiple modalities for learning (reading, listening, visual)</li>
+                    <li>✓ Helps pronunciation and listening comprehension</li>
+                    <li>✓ TTS-Selected allows isolation of difficult phrases for focused practice</li>
+                    <li>✓ Supports multimodal learners (auditory + visual + kinesthetic)</li>
+                    <li>✓ Enables asynchronous learning (students can practice independently)</li>
+                </ul>
+
+                <p style="background-color: #fff8e1; padding: 15px; border-radius: 5px; border-left: 4px solid #f39c12;">
+                    <strong>💡 Classroom Tip:</strong> Use TTS-English sparingly. The native audio is better for authentic pronunciation. Use TTS primarily for drill repetition or comparison activities (highlighting the difference between native speech and synthetic speech).
+                </p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="subsection" id="feature4">
+                <h3>Feature 4: Quiz/Assessment Mode</h3>
+                
+                <div class="feature-box">
+                    <strong>✅ What it is:</strong>
+                    <p style="margin-top: 10px;">Built-in assessment with 7 comprehension questions:</p>
+                    <ul>
+                        <li><strong>7 comprehension questions</strong> - Based on the lesson audio content</li>
+                        <li><strong>Multiple-choice answers</strong> - Easy to score objectively</li>
+                        <li><strong>Score calculation with feedback</strong> - Instant results (e.g., 5/7 = 71%)</li>
+                        <li><strong>Detailed answer review</strong> - Shows correct vs. incorrect responses with explanations</li>
+                        <li><strong>Performance messages</strong> - Motivational feedback (100% = "Perfect!", 80%+ = "Excellent!", etc.)</li>
+                   
+                    </ul>
+                </div>
+
+                <h4>Why it matters:</h4>
+                <ul style="margin-left: 25px; margin-bottom: 15px;">
+                    <li>✓ Objective measurement of student comprehension</li>
+                    <li>✓ Immediate feedback loop (students know exactly what they got wrong)</li>
+                    <li>✓ Removes grading burden from teacher</li>
+                    <li>✓ Motivational messages encourage learner confidence</li>
+                    <li>✓ Data-driven: teachers can see which questions students struggle with</li>
+                    <li>✓ Can be used for formative or summative assessment</li>
+                </ul>
+
+                <p style="background-color: #fff8e1; padding: 15px; border-radius: 5px; border-left: 4px solid #f39c12;">
+                    <strong>💡 Classroom Tip:</strong> Use Quiz Mode both during class (as a group activity) and after class (for homework/self-assessment). The tool automatically records scores, so you can track progress over time.
+                </p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECTION 2: CLASSROOM TEACHING STRATEGIES -->
+        <!-- ============================================ -->
+        <div class="section" id="section2">
+            <h2>Section 2: Classroom Teaching & Lesson Presentation Strategies</h2>
+
+            <p style="margin-bottom: 30px; font-size: 1.05em; color: #555;">
+                This section presents 7 proven teaching strategies that leverage the tool's features. Each strategy targets a specific learning objective and includes step-by-step instructions for classroom implementation.
+            </p>
+
+            <!-- Strategy 1 -->
+            <div class="subsection">
+                <h3>Strategy 1: Cold Listening (Pre-Teaching)</h3>
+                
+                <div class="strategy-box">
+                    <h4>📌 Objective:</h4>
+                    <div class="objective">Activate prior knowledge and assess baseline comprehension before teaching</div>
+                    
+                    <h4>🎓 How to use the tool:</h4>
+                    <ol style="margin-left: 25px; margin-top: 12px;">
+                        <li>Start with <strong>clip #9</strong> ("What are you interested in?") - the unit question</li>
+                        <li><strong>Don't show the English/Arabic yet</strong> - play audio only</li>
+                        <li>Ask students: <em>"What is the teacher asking? Can you guess?"</em></li>
+                        <li>Give students 2-3 minutes to discuss in pairs or small groups</li>
+                        <li>Use <strong>TTS-English</strong> to read the English script aloud after students attempt to answer</li>
+                        <li>Show Arabic translation only for students who need it</li>
+                    </ol>
+
+                    <h4>✨ Why this works:</h4>
+                    <ul style="margin-left: 25px; margin-top: 12px;">
+                        <li>Builds listening confidence without relying on text</li>
+                        <li>Engages background knowledge before new learning</li>
+                        <li>Creates a low-stakes environment (no wrong answers during guessing phase)</li>
+                        <li>Motivates students by showing how much they can understand without reading</li>
+                    </ul>
+
+                    <h4>⏱️ Time allocation:</h4>
+                    <p style="margin-left: 25px; margin-top: 10px; font-style: italic;">5-7 minutes</p>
+                </div>
+            </div>
+
+            <!-- Strategy 2 -->
+            <div class="subsection">
+                <h3>Strategy 2: Detailed Vocabulary Drilling</h3>
+                
+                <div class="strategy-box">
+                    <h4>📌 Objective:</h4>
+                    <div class="objective">Lock in key vocabulary and expressions through focused repetition</div>
+                    
+                    <h4>🎓 How to use the tool:</h4>
+                    <ol style="margin-left: 25px; margin-top: 12px;">
+                        <li><strong>Jump to specific clips</strong> using the search box (e.g., clip #12 "I like cooking")</li>
+                        <li>Isolate key phrases (e.g., "I like," "I'm interested in," "I'm learning")</li>
+                        <li>Use <strong>TTS-Selected:</strong> Highlight and speak ONLY the target phrase (not the full sentence)</li>
+                        <li>Have students <strong>repeat after the TTS</strong> (chorally or individually):
+                            <ul style="margin-left: 25px; margin-top: 8px;">
+                                <li>First repetition: All students together (builds confidence)</li>
+                                <li>Second repetition: Half the class</li>
+                                <li>Third repetition: Individual volunteers (builds confidence)</li>
+                            </ul>
+                        </li>
+                        <li>Ask comprehension questions: <em>"Does Yuna like cooking or sports?"</em></li>
+                        <li>Bonus drill: Use the <strong>Arabic translation</strong> to verify understanding without giving away the English</li>
+                    </ol>
+
+                    <h4>✨ Why this works:</h4>
+                    <ul style="margin-left: 25px; margin-top: 12px;">
+                        <li>Isolated practice prevents cognitive overload</li>
+                        <li>Spaced repetition aids long-term retention</li>
+                        <li>Chorusing builds confidence in lower-level learners</li>
+                        <li>Arabic verification checks real understanding</li>
+                    </ul>
+
+                    <h4>⏱️ Time allocation:</h4>
+                    <p style="margin-left: 25px; margin-top: 10px; font-style: italic;">8-12 minutes per phrase set</p>
+                </div>
+            </div>
+
+            <!-- Strategy 3 -->
+            <div class="subsection">
+                <h3>Strategy 3: Grammar Structure Recognition & Practice</h3>
+                
+                <div class="strategy-box">
+                    <h4>📌 Objective:</h4>
+                    <div class="objective">Teach grammar inductively through context and pattern recognition</div>
+                    
+                    <h4>🎓 How to use the tool:</h4>
+                    <ol style="margin-left: 25px; margin-top: 12px;">
+                        <li><strong>Search for examples</strong> of the same grammar structure:
+                            <ul style="margin-left: 25px; margin-top: 8px;">
+                                <li>Clip #12: "I <strong>like cooking</strong>" (verb + gerund/noun)</li>
+                                <li>Clip #16: "I'm <strong>interested in languages</strong>" (be + interested in + noun)</li>
+                                <li>Clip #31: "I <strong>like to go</strong> to museums" (like + infinitive)</li>
+                            </ul>
+                        </li>
+                        <li>Display all three using sequential navigation</li>
+                        <li>Ask: <em>"What's the difference? When do we use 'like' vs. 'interested in' vs. 'like to'?"</em></li>
+                        <li>Use <strong>TTS</strong> to compare pronunciation and word stress</li>
+                        <li>Create a class chart on the board:
+                            <table style="margin: 15px 0; font-size: 0.95em;">
+                                <tr style="background: #e8f5e9;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>Structure</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>Example</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>When to use</strong></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">like + noun</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">I like cooking</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Noun/gerund</td>
+                                </tr>
+                                <tr style="background: #f9f9f9;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;">like + infinitive</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">I like to read</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Full action/activity</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">be interested in</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">I'm interested in languages</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Academic/formal</td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li>Have students generate their own sentences using each structure</li>
+                    </ol>
+
+                    <h4>✨ Why this works:</h4>
+                    <ul style="margin-left: 25px; margin-top: 12px;">
+                        <li>Inductive grammar teaching is more engaging than explicit rules</li>
+                        <li>Students discover patterns themselves (deeper learning)</li>
+                        <li>Multiple examples prevent overgeneralization</li>
+                        <li>Student-generated sentences = productive output (not just receptive)</li>
+                    </ul>
+
+                    <h4>⏱️ Time allocation:</h4>
+                    <p style="margin-left: 25px; margin-top: 10px; font-style: italic;">12-15 minutes</p>
+                </div>
+            </div>
+
+            <!-- Strategy 4 -->
+            <div class="subsection">
+                <h3>Strategy 4: Dialogue Reconstruction & Role Play</h3>
+                
+                <div class="strategy-box">
+                    <h4>📌 Objective:</h4>
+                    <div class="objective">Build speaking fluency and authentic dialogue practice</div>
+                    
+                    <h4>🎓 How to use the tool:</h4>
+                    <ol style="margin-left: 25px; margin-top: 12px;">
+                        <li>Play the full dialogue (clips #1-39) once without stopping (for immersion)</li>
+                        <li><strong>Search for individual speaker turns:</strong>
+                            <ul style="margin-left: 25px; margin-top: 8px;">
+                                <li>Clip #14: Teacher asks Marcus</li>
+                                <li>Clip #20: Marcus responds</li>
+                                <li>(Choose any teacher-student exchange for practice)</li>
+                            </ul>
+                        </li>
+                        <li>Assign roles:
+                            <ul style="margin-left: 25px; margin-top: 8px;">
+                                <li><strong>Student A</strong> = Teacher</li>
+                                <li><strong>Student B</strong> = Student character (Marcus, Yuna, Felix, or Sophy)</li>
+                            </ul>
+                        </li>
+                        <li>Have <strong>Student A</strong> read the English script while the teacher uses <strong>TTS-English</strong> to model correct pronunciation</li>
+                        <li>Have <strong>Student B</strong> listen and repeat the response 2-3 times until memorized</li>
+                        <li><strong>Reverse roles</strong> and repeat with other dialogue sections</li>
+                        <li>Final performance: Students perform the complete dialogue without looking at text</li>
+                    </ol>
+
+                    <h4>✨ Why this works:</h4>
+                    <ul style="margin-left: 25px; margin-top: 12px;">
+                        <li>Authentic, contextual speaking practice (not isolated sentences)</li>
+                        <li>Mimicry builds confidence before spontaneous speech</li>
+                        <li>Role-play engages students emotionally (more memorable)</li>
+                        <li>Peer feedback and audience effect increases motivation</li>
+                    </ul>
+
+                    <h4>⏱️ Time allocation:</h4>
+                    <p style="margin-left: 25px; margin-top: 10px; font-style: italic;">15-20 minutes</p>
+                </div>
+            </div>
+
+            <!-- Strategy 5 -->
+            <div class="subsection">
+                <h3>Strategy 5: Comprehension Question Scaffolding</h3>
+                
+                <div class="strategy-box">
+                    <h4>📌 Objective:</h4>
+                    <div class="objective">Develop listening comprehension through guided, scaffolded questions</div>
+                    
+                    <h4>🎓 How to use the tool:</h4>
+                    <ol style="margin-left: 25px; margin-top: 12px;">
+                        <li>Play a clip (e.g., clips #16-18: Felix's responses)</li>
+                        <li>Ask <strong>3 levels of questions</strong> (increasing difficulty):
+                            <ul style="margin-left: 25px; margin-top: 8px;">
+                                <li><strong>Level 1 (Yes/No):</strong> "Is Felix learning French?" 
+                                    <ul style="margin-left: 15px; margin-top: 5px; font-style: italic;">✓ Easiest - requires recognition only</ul>
+                                </li>
+                                <li><strong>Level 2 (Factual):</strong> "What language is Felix learning?" 
+                                    <ul style="margin-left: 15px; margin-top: 5px; font-style: italic;">✓ Medium - requires recall and comprehension</ul>
+                                </li>
+                                <li><strong>Level 3 (Inferential):</strong> "Why do you think Felix wants to learn more languages?" 
+                                    <ul style="margin-left: 15px; margin-top: 5px; font-style: italic;">✓ Hardest - requires interpretation</ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>If students struggle at Level 1: Use <strong>TTS-English</strong> to re-read the clip slowly</li>
+                        <li>If students struggle at Level 2: Show English script</li>
+                        <li>If students struggle at Level 3: Show Arabic translation as a scaffold, then move on (inferential questions are challenging for all language learners)</li>
+                    </ol>
+
+                    <h4>✨ Why this works:</h4>
+                    <ul style="margin-left: 25px; margin-top: 12px;">
+                        <li>Scaffolded questions build confidence progressively</li>
+                        <li>Meets diverse proficiency levels in one classroom</li>
+                        <li>Yes/No questions activate prior knowledge before complex thinking</li>
+                        <li>Inferential questions develop higher-order thinking skills</li>
+                    </ul>
+
+                    <h4>⏱️ Time allocation:</h4>
+                    <p style="margin-left: 25px; margin-top: 10px; font-style: italic;">8-10 minutes per clip set</p>
+                </div>
+            </div>
+
+            <!-- Strategy 6 -->
+            <div class="subsection">
+                <h3>Strategy 6: Pronunciation & Accent Mimicry</h3>
+                
+                <div class="strategy-box">
+                    <h4>📌 Objective:</h4>
+                    <div class="objective">Improve student pronunciation and natural speech patterns (prosody)</div>
+                    
+                    <h4>🎓 How to use the tool:</h4>
+                    <ol style="margin-left: 25px; margin-top: 12px;">
+                        <li>Play the original audio clip (e.g., clip #12: "I like cooking")</li>
+                        <li>Use <strong>TTS-English</strong> to read the SAME sentence with synthetic pronunciation</li>
+                        <li>Ask students: <em>"Are they the same? What's different?"</em> 
+                            <ul style="margin-left: 25px; margin-top: 8px; font-style: italic;">
+                                (Guide them to notice: rhythm, intonation, speed, stress on certain words)
+                            </ul>
+                        </li>
+                        <li>Play original again → TTS again → have students choose which pronunciation pattern to mimic</li>
+                        <li><strong>Students record themselves</strong> (on phones/devices if available) and compare to the original</li>
+                        <li>Bonus: Use <strong>TTS-Selected</strong> on partial phrases to isolate difficult sounds:
+                            <ul style="margin-left: 25px; margin-top: 8px;">
+                                <li>Example: If students struggle with "interested," isolate just that word using TTS-Selected</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h4>✨ Why this works:</h4>
+                    <ul style="margin-left: 25px; margin-top: 12px;">
+                        <li>Comparing native audio + TTS highlights natural vs. mechanical speech</li>
+                        <li>Builds awareness of prosody (rhythm, stress, intonation) - crucial for fluency</li>
+                        <li>Recording and comparing is highly motivating for students</li>
+                        <li>Self-assessment without teacher judgment reduces anxiety</li>
+                    </ul>
+
+                    <h4>⏱️ Time allocation:</h4>
+                    <p style="margin-left: 25px; margin-top: 10px; font-style: italic;">10-12 minutes</p>
+                </div>
+            </div>
+
+            <!-- Strategy 7 -->
+            <div class="subsection">
+                <h3>Strategy 7: Comparative Analysis (Expressions Across Speakers)</h3>
+                
+                <div class="strategy-box">
+                    <h4>📌 Objective:</h4>
+                    <div class="objective">Show that the same idea can be expressed multiple ways (lexical variation)</div>
+                    
+                    <h4>🎓 How to use the tool:</h4>
+                    <ol style="margin-left: 25px; margin-top: 12px;">
+                        <li><strong>Search for how different students express interest:</strong>
+                            <ul style="margin-left: 25px; margin-top: 8px;">
+                                <li>Clip #12 (Yuna): "I <strong>like cooking</strong>"</li>
+                                <li>Clip #16 (Felix): "I'm <strong>interested in languages</strong>"</li>
+                                <li>Clip #21 (Marcus): "I <strong>really like sports</strong>"</li>
+                                <li>Clip #31 (Sophy): "I <strong>like to go to</strong> museums"</li>
+                            </ul>
+                        </li>
+                        <li>Display each in sequence using the search feature</li>
+                        <li>Ask: <em>"How many ways can we say we like something?"</em></li>
+                        <li>Have students rate each expression by:
+                            <ul style="margin-left: 25px; margin-top: 8px;">
+                                <li>Naturalness (Most natural = 5, Least natural = 1)</li>
+                                <li>Formality (Formal vs. Informal)</li>
+                                <li>Strength of emotion (Casual vs. Enthusiastic)</li>
+                            </ul>
+                        </li>
+                        <li>Create a class chart on the board: "Ways to Express Interest"</li>
+                        <li>Discuss: Which expressions would you use with a friend? With a teacher? With a job interviewer?</li>
+                    </ol>
+
+                    <h4>✨ Why this works:</h4>
+                    <ul style="margin-left: 25px; margin-top: 12px;">
+                        <li>Lexical variety prevents fossilized speech (same expressions repeated)</li>
+                        <li>Register awareness (formal vs. informal) builds pragmatic competence</li>
+                        <li>Shows authentic language variation (speakers do say things differently)</li>
+                        <li>Comparison activity engages higher-order thinking</li>
+                    </ul>
+
+                    <h4>⏱️ Time allocation:</h4>
+                    <p style="margin-left: 25px; margin-top: 10px; font-style: italic;">12-15 minutes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECTION 3: QUICK REVIEW & TEST PREPARATION -->
+        <!-- ============================================ -->
+        <div class="section" id="section3">
+            <h2>Section 3: Quick Review & Test Preparation Strategies</h2>
+
+            <p style="margin-bottom: 30px; font-size: 1.05em; color: #555;">
+                These 7 review strategies are designed for rapid reinforcement before quizzes, exams, or assessments. They simulate test conditions while keeping learning engaging and fun.
+            </p>
+
+            <!-- Review Strategy 1 -->
+            <div class="subsection">
+                <h3>Review Strategy 1: Speed Drill (30 seconds per clip)</h3>
+                
+                <div class="strategy-box">
+                    <h4>📌 Objective:</h4>
+                    <div class="objective">Rapid vocabulary/comprehension reinforcement before a test or assessment</div>
+                    
+                    <h4>🎓 How to use the tool:</h4>
+                    <ol style="margin-left: 25px; margin-top: 12px;">
+                        <li>Teacher calls out clip numbers randomly (e.g., "Clip 16!")</li>
+                        <li>Students have <strong>3 seconds</strong> to jump to that clip using the search box</li>
+                        <li>Class listens to the audio <strong>once</strong></li>
+                        <li>Students write down (on paper or whiteboard):
+                            <ul style="margin-left: 25px; margin-top: 8px;">
+                                <li>1 keyword from the clip, OR</li>
+                                <li>1 translation/definition, OR</li>
+                                <li>Answer to a quick comprehension question</li>
+                            </ul>
+                        </li>
+                        <li>Move to next clip (repeat 5-10 times)</li>
+                        <li>Optional: Award points for correct/fast responses (gamification)</li>
+                    </ol>
+
+                    <h4>✨ Why this works:</h4>
+                    <ul style="margin-left: 25px; margin-top: 12px;">
+                        <li>Simulates test pressure (forces rapid decision-making)</li>
+                        <li>Forces rapid recall (activates long-term memory)</li>
+                        <li>Keeps class engaged and energetic</li>
+                        <li>Provides quick formative assessment data</li>
+                    </ul>
+
+                    <h4>⏱️ Time allocation:</h4>
+                    <p style="margin-left: 25px; margin-top: 10px; font-style: italic;">5-7 minutes (entire drill)</p>
+                </div>
+            </div>
+
+            <!-- Review Strategy 2 -->
+            <div class="subsection">
+                <h3>Review Strategy 2: Dialogue Scramble & Reorder</h3>
+                
+                <div class="strategy-box">
+                    <h4>📌 Objective:</h4>
+                    <div class="objective">Verify understanding of conversation flow and chronological sequencing</div>
+                    
+                    <h4>🎓 How to use the tool:</h4>
+                    <ol style="margin-left: 25px; margin-top: 12px;">
+                        <li>Play clips <strong>OUT OF ORDER:</strong> (e.g., 20 → 12 → 25 → 16)</li>
+                        <li>Students number them in the CORRECT chronological order on paper</li>
+                        <li>Go back and use the search feature to verify each clip</li>
+                        <li>Ask follow-up questions: 
+                            <ul style="margin-left: 25px; margin-top: 8px;">
+                                <li><em>"How did you know clip 12 comes before clip 16?"</em></li>
+                                <li><em>"What clues in the audio told you the order?"</em> (speaker roles, topic, context)</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h4>✨ Why this works:</h4>
+                    <ul style="margin-left: 25px; margin-top: 12px;">
+                        <li>Tests deep comprehension, not just surface recognition</li>
+                        <li>Requires understanding of context and speaker relationships</li>
+                        <li>Forces active thinking (not passive listening)</li>
+                    </ul>
+
+                    <h4>⏱️ Time allocation:</h4>
+                    <p style="margin-left: 25px; margin-top: 10px; font-style: italic;">8-10 minutes</p>
+                </div>
+            </div>
+
+            <!-- Review Strategy 3 -->
+            <div class="subsection">
+                <h3>Review Strategy 3: Fill-in-the-Blank Preparation</h3>
+                
+                <div class="strategy-box">
+                    <h4>📌 Objective:</h4>
+                    <div class="objective">Practice test-taking skills for standardized listening comprehension exams</div>
+                    
+                    <h4>🎓 How to use the tool:</h4>
+                    <ol style="margin-left: 25px; margin-top: 12px;">
+                        <li>Choose a key clip (e.g., clip #16: "I'm interested in languages")</li>
+                        <li>Use <strong>TTS-Selected</strong> to highlight and speak only certain words (not the full sentence)</li>
+                        <li>Give students a handout with blanks to fill:
+                            <ul style="margin-left: 25px; margin-top: 8px;">
+                                <li>"I'm _______ in languages" (interested)</li>
+                                <li>"I'm _______ French" (learning)</li>
+                                <li>"I _______ to learn more languages" (want)</li>
+                            </ul>
+                        </li>
+                        <li>Play audio 1-2 times for students to fill in blanks</li>
+                        <li>Use audio to self-check (play original audio)</li>
+                        <li>Discuss any difficult words or gaps in comprehension</li>
+                    </ol>
+
+                    <h4>✨ Why this works:</h4>
+                    <ul style="margin-left: 25px; margin-top: 12px;">
+                        <li>Directly prepares students for standardized listening tests</li>
+                        <li>Focuses on key vocabulary in context</li>
+                        <li>Tests recognition of specific words (not general comprehension)</li>
+                        <li>Provides objective measure of listening ability</li>
+                    </ul>
+
+                    <h4>⏱️ Time allocation:</h4>
+                    <p style="margin-left: 25px; margin-top: 10px; font-style: italic;">8-10 minutes</p>
+                </div>
+            </div>
+
+            <!-- Review Strategy 4 -->
+            <div class="subsection">
+                <h3>Review Strategy 4: Information Gap Activity (Pair Work)</h3>
+                
+                <div class="strategy-box">
+                    <h4>📌 Objective:</h4>
+                    <div class="objective">Activate receptive knowledge into productive speaking use</div>
+                    
+                    <h4>🎓 How to use the tool:</h4>
+                    <ol style="margin-left: 25px; margin-top: 12px;">
+                        <li>Divide class into pairs: <strong>Student A</strong> & <strong>Student B</strong></li>
+                        <li><strong>Student A listens to clip #16</strong> (Felix's interests) <strong>only</strong> - no reading</li>
+                        <li><strong>Student B does NOT listen</strong> - waits for explanation</li>
+                        <li><strong>Student A must explain to Student B</strong> (without reading text): <em>"Tell me about Felix"</em></li>
+                        <li><strong>Student B listens and takes notes</strong> on what Felix likes</li>
+                        <li><strong>Then reverse roles:</strong> Student B listens to clip #12 (Yuna) and explains to Student A</li>
+                        <li>If students get stuck mid-explanation: Teacher can use <strong>TTS-English</strong> as a hint</li>
+                        <li>Optional: Switch pairs and have students explain again (reinforces learning)</li>
+                    </ol>
+
+                    <h4>✨ Why this works:</h4>
+                    <ul style="margin-left: 25px; margin-top: 12px;">
+                        <li>Tests listening comprehension + speaking production (not just passive listening)</li>
+                        <li>Peer accountability (students must communicate clearly to a classmate)</li>
+                        <li>Information gap creates real communicative purpose (authentic speaking)</li>
+                        <li>Collaborative learning is highly motivating</li>
+                    </ul>
+
+                    <h4>⏱️ Time allocation:</h4>
+                    <p style="margin-left: 25px; margin-top: 10px; font-style: italic;">10-12 minutes</p>
+                </div>
+            </div>
+
+            <!-- Review Strategy 5 -->
+            <div class="subsection">
+                <h3>Review Strategy 5: True/False Statements with Verification</h3>
+                
+                <div class="strategy-box">
+                    <h4>📌 Objective:</h4>
+                    <div class="objective">Practice distinguishing correct vs. incorrect information (critical listening)</div>
+                    
+                    <h4>🎓 How to use the tool:</h4>
+                    <ol style="margin-left: 25px; margin-top: 12px;">
+                        <li>Make statements about the lesson content:
+                            <ul style="margin-left: 25px; margin-top: 8px;">
+                                <li>"Marcus plays soccer every day" (FALSE - plays every weekend)</li>
+                                <li>"Sophy likes museums" (TRUE)</li>
+                                <li>"Felix is learning Spanish" (FALSE - learning French)</li>
+                                <li>"Yuna is interested in languages" (FALSE - likes cooking)</li>
+                            </ul>
+                        </li>
+                        <li>Students say T/F on paper or raise hands</li>
+                        <li>Then <strong>jump to the clip</strong> to verify their answer</li>
+                        <li>Use <strong>TTS-English</strong> to read the relevant sentence aloud</li>
+                        <li>Discuss: <em>"Where in the audio did you find the answer? What phrase proved it was false?"</em></li>
+                    </ol>
+
+                    <h4>✨ Why this works:</h4>
+                    <ul style="margin-left: 25px; margin-top: 12px;">
+                        <li>Active verification builds critical listening skills</li>
+                        <li>Prevents guessing (students must justify answers)</li>
+                        <li>Distinguishing T/F requires detailed comprehension</li>
+                        <li>Immediate feedback corrects misconceptions</li>
+                    </ul>
+
+                    <h4>⏱️ Time allocation:</h4>
+                    <p style="margin-left: 25px; margin-top: 10px; font-style: italic;">8-10 minutes</p>
+                </div>
+            </div>
+
+            <!-- Review Strategy 6 -->
+            <div class="subsection">
+                <h3>Review Strategy 6: Pre-Quiz Practice Mode</h3>
+                
+                <div class="strategy-box">
+                    <h4>📌 Objective:</h4>
+                    <div class="objective">Low-stakes rehearsal before the official quiz (reduces test anxiety)</div>
+                    
+                    <h4>🎓 How to use the tool:</h4>
+                    <ol style="margin-left: 25px; margin-top: 12px;">
+                        <li>Before students take the <strong>official 7-question quiz</strong>, run a guided practice together</li>
+                        <li>Do the first 2-3 quiz questions as a whole class:
+                            <ul style="margin-left: 25px; margin-top: 8px;">
+                                <li>Use <strong>TTS buttons</strong> to read questions and options aloud <strong>slowly</strong></li>
+                                <li>Allow extra think time (30 seconds per question instead of 10)</li>
+                                <li>Encourage discussion: <em>"What do you think? Why?"</em></li>
+                            </ul>
+                        </li>
+                        <li>Discuss reasoning: <em>"Why is that the best answer? Where did you hear that in the audio?"</em></li>
+                        <li>Then transition to the <strong>real Quiz Mode</strong> (students take it individually)</li>
+                        <li>Results are shown immediately</li>
+                    </ol>
+
+                    <h4>✨ Why this works:</h4>
+                    <ul style="margin-left: 25px; margin-top: 12px;">
+                        <li>Reduces test anxiety (students see format before official assessment)</li>
+                        <li>Clarifies expectations (what a "correct" answer looks like)</li>
+                        <li>Provides formative feedback before summative assessment</li>
+                        <li>Group discussion activates prior knowledge</li>
+                    </ul>
+
+                    <h4>⏱️ Time allocation:</h4>
+                    <p style="margin-left: 25px; margin-top: 10px; font-style: italic;">5-7 minutes (practice only, not counting official quiz)</p>
+                </div>
+            </div>
+
+            <!-- Review Strategy 7 -->
+            <div class="subsection">
+                <h3>Review Strategy 7: Pronunciation Checkpoint</h3>
+                
+                <div class="strategy-box">
+                    <h4>📌 Objective:</h4>
+                    <div class="objective">Final check on difficult words before assessment (prevents pronunciation-related errors)</div>
+                    
+                    <h4>🎓 How to use the tool:</h4>
+                    <ol style="margin-left: 25px; margin-top: 12px;">
+                        <li>Identify 5 words/phrases students struggled with (e.g., "interested," "languages," "museums")</li>
+                        <li>Search for each clip where that word appears</li>
+                        <li>Use <strong>TTS-Selected</strong> to isolate and repeat the word 3x:
+                            <ul style="margin-left: 25px; margin-top: 8px;">
+                                <li>First time: Speak it (students listen)</li>
+                                <li>Second time: Speak it (students listen actively)</li>
+                                <li>Third time: Speak it (students repeat after)</li>
+                            </ul>
+                        </li>
+                        <li>Have students mimic the pronunciation</li>
+                        <li>Optional: Students record themselves (on phones) saying the word and compare to TTS/native audio</li>
+                    </ol>
+
+                    <h4>✨ Why this works:</h4>
+                    <ul style="margin-left: 25px; margin-top: 12px;">
+                        <li>Pronunciation mistakes often hurt listening comprehension (students may not recognize words)</li>
+                        <li>Final drill "locks in" correct pronunciation before test</li>
+                        <li>Targeted practice (only problem words, not whole lesson)</li>
+                        <li>Recording comparison is motivating and gives concrete feedback</li>
+                    </ul>
+
+                    <h4>⏱️ Time allocation:</h4>
+                    <p style="margin-left: 25px; margin-top: 10px; font-style: italic;">5-7 minutes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECTION 4: SAMPLE LESSON SEQUENCE -->
+        <!-- ============================================ -->
+        <div class="section" id="section4">
+            <h2>Section 4: Sample Lesson Sequence (45 minutes)</h2>
+
+            <p style="margin-bottom: 25px; font-size: 1.05em; color: #555;">
+                Below is a complete lesson sequence for a 45-minute class period using the Interactive Teaching Tool. This is a template—adjust timing and strategies based on your class level, pacing, and specific needs.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Activity</th>
+                        <th>Tool Feature(s)</th>
+                        <th>Strategy Used</th>
+                        <th>Objective</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>0-5 min</strong></td>
+                        <td>Cold listen to unit question (clip #9)</td>
+                        <td>Audio only</td>
+                        <td>Cold Listening (Pre-Teaching)</td>
+                        <td>Activate prior knowledge; assess baseline listening</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5-15 min</strong></td>
+                        <td>Vocabulary focus: "like" vs. "interested in" vs. "like to" (clips #12, 16, 31)</td>
+                        <td>Search + TTS-Selected + English Script</td>
+                        <td>Grammar Structure Recognition & Detailed Vocabulary Drilling</td>
+                        <td>Inductive grammar; lock in key expressions</td>
+                    </tr>
+                    <tr>
+                        <td><strong>15-25 min</strong></td>
+                        <td>Role play prep: Students mimic dialogue exchanges (clips #14-20, #24-25, #30-33)</td>
+                        <td>Sequential navigation + TTS-English</td>
+                        <td>Dialogue Reconstruction & Role Play</td>
+                        <td>Speaking fluency; authentic dialogue practice</td>
+                    </tr>
+                    <tr>
+                        <td><strong>25-35 min</strong></td>
+                        <td>Comprehension Q&A on each character (jump to specific clips for each student)</td>
+                        <td>Search feature + Scaffolded questions (Yes/No → Factual → Inferential)</td>
+                        <td>Comprehension Question Scaffolding</td>
+                        <td>Verify understanding; build confidence</td>
+                    </tr>
+                    <tr>
+                        <td><strong>35-40 min</strong></td>
+                        <td>Speed drill: Teacher calls random clip numbers; students listen and write keywords</td>
+                        <td>Search + Audio playback</td>
+                        <td>Speed Drill (30 sec per clip)</td>
+                        <td>Quick review; rapid recall practice</td>
+                    </tr>
+                    <tr>
+                        <td><strong>40-45 min</strong></td>
+                        <td>Pre-quiz practice OR exit ticket (True/False statements with verification)</td>
+                        <td>TTS + Quiz Mode OR Search + TTS</td>
+                        <td>Pre-Quiz Practice Mode OR True/False Statements</td>
+                        <td>Build confidence before assessment; exit ticket for teacher data</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pro-tip">
+                <h4>💡 Pro Tips for Lesson Sequencing:</h4>
+                <ul style="margin-left: 25px; margin-top: 15px;">
+                    <li><strong>Front-load listening:</strong> Cold listening (no text) at the beginning when students are most alert</li>
+                    <li><strong>Vocabulary + Grammar together:</strong> Don't separate them—teach grammar through vocabulary</li>
+                    <li><strong>Build to productive skills:</strong> Move from receptive (listening) → semi-productive (role play mimicry) → productive (dialogue/speaking)</li>
+                    <li><strong>Intensive → Extensive:</strong> Focus on specific clips (intensive) before moving to random drills (extensive review)</li>
+                    <li><strong>End with assessment:</strong> Always end with a quiz or exit ticket for immediate feedback on learning</li>
+                    <li><strong>Flexibility:</strong> If a topic takes longer than expected, cut the speed drill and move to assessment</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECTION 5: KEY TEACHER TIPS -->
+        <!-- ============================================ -->
+        <div class="section" id="section5">
+            <h2>Section 5: Key Teacher Tips</h2>
+
+            <p style="margin-bottom: 30px; font-size: 1.05em; color: #555;">
+                These proven best practices will help you maximize the effectiveness of the Interactive Teaching Tool in your classroom. Avoid common pitfalls and implement successful strategies.
+            </p>
+
+            <div class="do-dont-container">
+                <div class="do-box">
+                    <h4>✅ DO:</h4>
+                    <ul>
+                        <li>Use the <strong>search feature strategically</strong> (not sequentially) for focused, targeted teaching</li>
+                        <li><strong>Combine audio + TTS + text</strong> for multi-modal learning that reaches all learner types</li>
+                        <li>Ask students <strong>questions ABOUT clips BEFORE showing the English/Arabic</strong> to build confidence</li>
+                        <li>Use <strong>TTS-Selected on challenging phrases, not full sentences</strong> for focused drill</li>
+                        <li><strong>Pause after audio clips</strong> and wait for students to process (don't rush to the answer)</li>
+                        <li><strong>Vary the pace</strong> - sometimes play audio once, sometimes 2-3 times depending on difficulty</li>
+                        <li><strong>Use the Arabic translation as a scaffold</strong>, not a crutch (show only when really needed)</li>
+                        <li><strong>Record student progress</strong> from Quiz Mode to track growth over time</li>
+                    </ul>
+                </div>
+
+                <div class="dont-box">
+                    <h4>❌ DON'T:</h4>
+                    <ul>
+                        <li><strong>Play full audio + read full English + read full Arabic all at once</strong> (causes cognitive overload)</li>
+                        <li><strong>Let students read the English while listening</strong> (defeats the listening practice purpose)</li>
+                        <li><strong>Spend equal time on all clips</strong> - prioritize key vocabulary and grammar structures</li>
+                        <li><strong>Skip the Arabic translation entirely</strong> - it's a valuable scaffold for struggling learners</li>
+                        <li><strong>Use TTS as a substitute for native audio</strong> - the native audio is authentically better</li>
+                        <li><strong>Rush through clips without checking comprehension</strong> - slow down and verify understanding</li>
+                        <li><strong>Do all 39 clips in sequence</strong> - students get bored; use search to pick key clips</li>
+                        <li><strong>Skip the Quiz Mode</strong> - it provides valuable formative and summative assessment data</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pro-tip" style="margin-top: 30px;">
+                <h4>🎯 Additional Teacher Tips:</h4>
+                <ul style="margin-left: 25px; margin-top: 15px;">
+                    <li><strong>Create a "Key Clips" handout:</strong> Print the clip numbers for critical vocabulary/grammar (e.g., clips #12, 16, 31 for grammar structures) and give to students. They can reference this during independent study.</li>
+                    <li><strong>Use Think-Pair-Share:</strong> Have students think individually, then discuss with a partner, THEN share with the class. This builds confidence before whole-group speaking.</li>
+                    <li><strong>Record your voice:</strong> If possible, record yourself asking comprehension questions about the clips. This allows students to practice independently outside class.</li>
+                    <li><strong>Create a "Problem Words" list:</strong> Track which words/phrases students struggle with. Use the Pronunciation Checkpoint strategy on these before tests.</li>
+                    <li><strong>Gamify the Speed Drill:</strong> Award points, use a leaderboard, or give small prizes. This increases motivation and engagement.</li>
+                    <li><strong>Pair lower and higher students:</strong> During pair work activities, mix proficiency levels so stronger students can model for weaker ones.</li>
+                    <li><strong>Use time limits strategically:</strong> For rehearsal activities (role play), use timers (30 seconds to prepare, 1 minute to perform). This focuses student effort and prevents procrastination.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECTION 6: ASSESSMENT OUTCOMES -->
+        <!-- ============================================ -->
+        <div class="section" id="section6">
+            <h2>Section 6: Assessment Outcomes & Learning Goals</h2>
+
+            <p style="margin-bottom: 30px; font-size: 1.05em; color: #555;">
+                By using the Interactive Teaching Tool strategically and implementing the strategies above, your students will achieve the following measurable learning outcomes by the end of Unit One.
+            </p>
+
+            <div class="outcomes">
+                <h4>Expected Learning Outcomes:</h4>
+                <ul>
+                    <li><strong>Listening Comprehension:</strong> Improve accuracy in understanding different speakers, speech rates, and natural pronunciation patterns in English dialogue</li>
+                    
+                    <li><strong>Vocabulary Expansion:</strong> Master 20+ key expressions for describing personal interests and hobbies (e.g., "I like," "I'm interested in," "I like to," "really," "very," "also," "lots of things")</li>
+                    
+                    <li><strong>Grammar Structures:</strong> Understand and apply 3 major grammar patterns:
+                        <ul style="margin-left: 25px; margin-top: 8px;">
+                            <li>"like" + noun (I like cooking)</li>
+                            <li>"like" + infinitive (I like to read)</li>
+                            <li>"interested in" + gerund (I'm interested in languages)</li>
+                        </ul>
+                    </li>
+                    
+                    <li><strong>Authentic Dialogue Practice:</strong> Perform memorized dialogue exchanges with natural pronunciation, stress, and intonation patterns</li>
+                    
+                    <li><strong>Speaking Confidence:</strong> Build confidence through low-stakes, scaffolded practice before producing spontaneous speech</li>
+                    
+                    <li><strong>Quiz Performance:</strong> Score 60%+ on the 7-question comprehension quiz (with 80%+ being the target for proficient learners)</li>
+                    
+                    <li><strong>Critical Listening:</strong> Distinguish between correct and incorrect information; verify comprehension by locating evidence in audio</li>
+                    
+                    <li><strong>Transfer to Personal Context:</strong> Use learned expressions to describe their own interests in personalized speaking/writing tasks</li>
+                </ul>
+            </div>
+
+            <div class="pro-tip">
+                <h4>🎓 For You: Creating Personalized Student Goals</h4>
+                <p>At the <strong>beginning of Unit One</strong>, have each student identify which expressions and vocabulary they want to use. Example: "By the end of this unit, I want to be able to say 'I'm interested in sports and music' in English."</p>
+                <p style="margin-top: 10px;">By the <strong>end of Unit One</strong>, check if students achieved their goal. This creates ownership and increases motivation.</p>
+            </div>
+
+            <div style="background-color: #e8f5e9; border-left: 6px solid #4caf50; padding: 20px; margin-top: 30px; border-radius: 8px;">
+                <h4 style="color: #2e7d32; margin-bottom: 15px;">📊 Measuring Success:</h4>
+                <p style="margin-bottom: 10px;"><strong>Formative Assessment (during the unit):</strong></p>
+                <ul style="margin-left: 25px; margin-bottom: 15px;">
+                    <li>Observation of student participation in pair/group work</li>
+                    <li>Accuracy of responses to comprehension questions (Yes/No → Factual → Inferential levels)</li>
+                    <li>Quality of role play performances (pronunciation, fluency, confidence)</li>
+                </ul>
+                <p style="margin-bottom: 10px;"><strong>Summative Assessment (end of unit):</strong></p>
+                <ul style="margin-left: 25px;">
+                    <li>Quiz Mode score (target: 70%+ for passing, 85%+ for proficient)</li>
+                    <li>Student-recorded dialogue performance (teacher rating on rubric)</li>
+                    <li>Individual speaking sample describing their own interests</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- FOOTER -->
+        <!-- ============================================ -->
+        <div class="footer">
+            <p><strong>📚 KSU CPT - Comprehensive Teachers' Guide</strong></p>
+            <p><strong>Q Skills Intro - LS - Unit 1 - Audio 1:</strong> "What are you interested in?"</p>
+            <p style="margin-top: 15px; font-size: 0.9em; color: #888;">
+                This guide includes 7 core teaching strategies, 7 review/test prep strategies, a 45-minute lesson sequence, and practical implementation tips. Use this guide as a reference before, during, and after teaching Unit One.
+            </p>
+            <p style="margin-top: 20px; font-size: 0.85em;">
+                <strong>For questions, feedback, or additional resources:</strong> Contact Eltayeb Mohamed, the KSU CPT developer.<br>
+                <strong>© 2026</strong> KSU CPT. All Rights Reserved.
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        // Smooth scrolling for table of contents links
+        document.querySelectorAll('.toc a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Print-friendly enhancements
+        window.addEventListener('beforeprint', function() {
+            console.log('Document is ready for printing to PDF');
+        });
+    </script>
+</body>
+</html>
